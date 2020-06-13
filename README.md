@@ -1,4 +1,4 @@
-Ansible Role: Docker setup
+Ansible Role: Docker influxdb grafana
 =========
 A simple role to run  [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [Grafana](https://grafana.com/) instances
 in two separate docker containers. 
@@ -8,7 +8,7 @@ The role has been tested on Rasperry Pi only, but it should work on any other Li
 Requirements
 ------------
 
-Docker must be installed and running on all hosts. Docker can be installed using the [docker_setup role](https://github.com/ellolo/ansible-docker_setup). 
+Docker must be installed and running on the host. Docker can be installed using the [docker_setup role](https://github.com/ellolo/ansible-docker_setup). 
 
 Role Variables
 --------------
@@ -37,6 +37,8 @@ None
 
 Example Playbook
 ----------------
+
+```yml
 - hosts: localhost
   
   vars:
@@ -58,6 +60,7 @@ Example Playbook
     - role: geerlingguy.pip
     - role: ansible-docker_setup
     - role: ansible-docker_influxdb_grafana
+```
 
 License
 -------
